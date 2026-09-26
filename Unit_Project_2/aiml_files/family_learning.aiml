@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="1.0.1" encoding="UTF-8">
+
+    <!-- Learning Genders -->
+    <category>
+        <pattern>* IS A MALE</pattern>
+        <template>LEARN:gender|<star/>|male</template>
+    </category>
+    <category>
+        <pattern>* IS MALE</pattern>
+        <template><srai><star/> IS A MALE</srai></template>
+    </category>
+    <category>
+        <pattern>* IS A FEMALE</pattern>
+        <template>LEARN:gender|<star/>|female</template>
+    </category>
+    <category>
+        <pattern>* IS FEMALE</pattern>
+        <template><srai><star/> IS A FEMALE</srai></template>
+    </category>
+
+    <!-- Learning Parents -->
+    <category>
+        <pattern>* IS THE FATHER OF *</pattern>
+        <template>LEARN:parent|<star index="1"/>|<star index="2"/>|father</template>
+    </category>
+    <category>
+        <pattern>* IS FATHER OF *</pattern>
+        <template><srai><star index="1"/> IS THE FATHER OF <star index="2"/></srai></template>
+    </category>
+    
+    <category>
+        <pattern>* IS THE MOTHER OF *</pattern>
+        <template>LEARN:parent|<star index="1"/>|<star index="2"/>|mother</template>
+    </category>
+    <category>
+        <pattern>* IS MOTHER OF *</pattern>
+        <template><srai><star index="1"/> IS THE MOTHER OF <star index="2"/></srai></template>
+    </category>
+
+    <category>
+        <pattern>* IS A PARENT OF *</pattern>
+        <template>LEARN:parent|<star index="1"/>|<star index="2"/>|parent</template>
+    </category>
+    <category>
+        <pattern>* IS PARENT OF *</pattern>
+        <template><srai><star index="1"/> IS A PARENT OF <star index="2"/></srai></template>
+    </category>
+
+    <!-- Learning Marriages -->
+    <category>
+        <pattern>* IS MARRIED TO *</pattern>
+        <template>LEARN:married|<star index="1"/>|<star index="2"/></template>
+    </category>
+
+    <!-- Learning Birth Years -->
+    <category>
+        <pattern>* WAS BORN IN *</pattern>
+        <template>LEARN:dob|<star index="1"/>|<star index="2"/></template>
+    </category>
+    <category>
+        <pattern>* WAS BORN *</pattern>
+        <template><srai><star index="1"/> WAS BORN IN <star index="2"/></srai></template>
+    </category>
+
+    <!-- Fallback for anything that doesn't match queries or learning -->
+    <category>
+        <pattern>*</pattern>
+        <template>I did not understand. You can say e.g., 'Ali is the father of Hassan' or ask 'Who is the father of Hassan?'</template>
+    </category>
+
+</aiml>

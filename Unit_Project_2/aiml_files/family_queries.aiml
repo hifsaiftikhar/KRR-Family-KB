@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="1.0.1" encoding="UTF-8">
+
+    <!-- Greetings and Help -->
+    <category>
+        <pattern>HELLO</pattern>
+        <template>Hello! I am the Dynamic Prolog Family Agent. Teach me relationships (e.g. Ali is the father of Hassan, Sana was born in 1978) and then query me!</template>
+    </category>
+    <category>
+        <pattern>HI</pattern>
+        <template><srai>HELLO</srai></template>
+    </category>
+    <category>
+        <pattern>HELP</pattern>
+        <template>You can teach me:
+- Ali is a male / Fatima is a female
+- Ali is the father of Hassan
+- Fatima is the mother of Hassan
+- Ali is married to Fatima
+- Ali was born in 1950
+
+Then ask me questions like:
+- Who is the father of Hassan?
+- Who are the children of Ali?
+- Is Hassan married?
+- When was Ali born?</template>
+    </category>
+
+    <!-- FATHER / MOTHER -->
+    <category>
+        <pattern>WHO IS THE FATHER OF *</pattern>
+        <template>QUERY:father(X, <star/>)</template>
+    </category>
+    <category>
+        <pattern>WHO IS * FATHER</pattern>
+        <template>QUERY:father(X, <star/>)</template>
+    </category>
+    <category>
+        <pattern>WHO IS THE MOTHER OF *</pattern>
+        <template>QUERY:mother(X, <star/>)</template>
+    </category>
+    <category>
+        <pattern>WHO IS * MOTHER</pattern>
+        <template>QUERY:mother(X, <star/>)</template>
+    </category>
+
+    <!-- SON / DAUGHTER / CHILD -->
+    <category>
+        <pattern>WHO ARE THE CHILDREN OF *</pattern>
+        <template>QUERY:child(X, <star/>)</template>
+    </category>
+    <category>
+        <pattern>CHILDREN OF *</pattern>
+        <template>QUERY:child(X, <star/>)</template>
+    </category>
+    <category>
+        <pattern>WHO IS THE SON OF *</pattern>
+        <template>QUERY:son(X, <star/>)</template>
+    </category>
+    <category>
+        <pattern>WHO IS THE DAUGHTER OF *</pattern>
+        <template>QUERY:daughter(X, <star/>)</template>
+    </category>
+
+    <!-- GRANDPARENT / GRANDKIDS -->
+    <category>
+        <pattern>WHO ARE THE GRANDPARENTS OF *</pattern>
+        <template>QUERY:grandparent(X, <star/>)</template>
+    </category>
+    <category>
+        <pattern>WHO IS THE GRANDFATHER OF *</pattern>
+        <template>QUERY:grandfather(X, <star/>)</template>
+    </category>
+    <category>
+        <pattern>WHO IS THE GRANDMOTHER OF *</pattern>
+        <template>QUERY:grandmother(X, <star/>)</template>
+    </category>
+    <category>
+        <pattern>WHO ARE THE GRANDCHILDREN OF *</pattern>
+        <template>QUERY:grandchild(X, <star/>)</template>
+    </category>
+
+    <!-- SIBLINGS / BROTHER / SISTER -->
+    <category>
+        <pattern>WHO ARE THE SIBLINGS OF *</pattern>
+        <template>QUERY:sibling(X, <star/>)</template>
+    </category>
+    <category>
+        <pattern>WHO IS THE BROTHER OF *</pattern>
+        <template>QUERY:brother(X, <star/>)</template>
+    </category>
+    <category>
+        <pattern>WHO IS THE SISTER OF *</pattern>
+        <template>QUERY:sister(X, <star/>)</template>
+    </category>
+
+    <!-- SPOUSE / HUSBAND / WIFE -->
+    <category>
+        <pattern>WHO IS THE SPOUSE OF *</pattern>
+        <template>QUERY:spouse(<star/>, X)</template>
+    </category>
+    <category>
+        <pattern>WHO IS MARRIED TO *</pattern>
+        <template>QUERY:spouse(<star/>, X)</template>
+    </category>
+    <category>
+        <pattern>WHO IS * MARRIED TO</pattern>
+        <template>QUERY:spouse(<star/>, X)</template>
+    </category>
+    <category>
+        <pattern>WHO IS THE HUSBAND OF *</pattern>
+        <template>QUERY:husband(X, <star/>)</template>
+    </category>
+    <category>
+        <pattern>WHO IS THE WIFE OF *</pattern>
+        <template>QUERY:wife(X, <star/>)</template>
+    </category>
+
+    <!-- UNCLE / AUNT / COUSIN / NEPHEW / NIECE -->
+    <category>
+        <pattern>WHO IS THE UNCLE OF *</pattern>
+        <template>QUERY:uncle(X, <star/>)</template>
+    </category>
+    <category>
+        <pattern>WHO IS THE AUNT OF *</pattern>
+        <template>QUERY:aunt(X, <star/>)</template>
+    </category>
+    <category>
+        <pattern>WHO ARE THE COUSINS OF *</pattern>
+        <template>QUERY:cousin(X, <star/>)</template>
+    </category>
+    <category>
+        <pattern>WHO IS THE NEPHEW OF *</pattern>
+        <template>QUERY:nephew(X, <star/>)</template>
+    </category>
+    <category>
+        <pattern>WHO IS THE NIECE OF *</pattern>
+        <template>QUERY:niece(X, <star/>)</template>
+    </category>
+
+    <!-- IN-LAWS -->
+    <category>
+        <pattern>WHO IS THE FATHER IN LAW OF *</pattern>
+        <template>QUERY:father_in_law(X, <star/>)</template>
+    </category>
+    <category>
+        <pattern>WHO IS THE MOTHER IN LAW OF *</pattern>
+        <template>QUERY:mother_in_law(X, <star/>)</template>
+    </category>
+    <category>
+        <pattern>WHO IS THE SON IN LAW OF *</pattern>
+        <template>QUERY:son_in_law(X, <star/>)</template>
+    </category>
+    <category>
+        <pattern>WHO IS THE DAUGHTER IN LAW OF *</pattern>
+        <template>QUERY:daughter_in_law(X, <star/>)</template>
+    </category>
+    <category>
+        <pattern>WHO IS THE BROTHER IN LAW OF *</pattern>
+        <template>QUERY:brother_in_law(X, <star/>)</template>
+    </category>
+    <category>
+        <pattern>WHO IS THE SISTER IN LAW OF *</pattern>
+        <template>QUERY:sister_in_law(X, <star/>)</template>
+    </category>
+
+    <!-- ANCESTORS / DESCENDANTS -->
+    <category>
+        <pattern>WHO ARE THE ANCESTORS OF *</pattern>
+        <template>QUERY:ancestor(X, <star/>)</template>
+    </category>
+    <category>
+        <pattern>WHO ARE THE DESCENDANTS OF *</pattern>
+        <template>QUERY:descendant(X, <star/>)</template>
+    </category>
+
+    <!-- DATES OF BIRTH / DOB -->
+    <category>
+        <pattern>WHEN WAS * BORN</pattern>
+        <template>QUERY:dob(<star/>, X)</template>
+    </category>
+    <category>
+        <pattern>WHAT IS THE DATE OF BIRTH OF *</pattern>
+        <template>QUERY:dob(<star/>, X)</template>
+    </category>
+    <category>
+        <pattern>WHAT YEAR WAS * BORN</pattern>
+        <template>QUERY:dob(<star/>, X)</template>
+    </category>
+
+    <!-- AGE COMPARISONS -->
+    <category>
+        <pattern>IS * OLDER THAN *</pattern>
+        <template>QUERY:older_than(<star index="1"/>, <star index="2"/>)</template>
+    </category>
+    <category>
+        <pattern>IS * YOUNGER THAN *</pattern>
+        <template>QUERY:younger_than(<star index="1"/>, <star index="2"/>)</template>
+    </category>
+
+    <!-- GENERATION / CHILDREN / MARRIAGE STATUS -->
+    <category>
+        <pattern>DOES * HAVE CHILDREN</pattern>
+        <template>QUERY:has_children(<star/>)</template>
+    </category>
+    <category>
+        <pattern>IS * MARRIED</pattern>
+        <template>QUERY:is_married(<star/>)</template>
+    </category>
+
+    <!-- LISTS -->
+    <category>
+        <pattern>LIST ALL MALES</pattern>
+        <template>QUERY:male(X)</template>
+    </category>
+    <category>
+        <pattern>LIST ALL FEMALES</pattern>
+        <template>QUERY:female(X)</template>
+    </category>
+
+</aiml>
