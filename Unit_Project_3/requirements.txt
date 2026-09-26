@@ -1,0 +1,5 @@
+pytholog
+python-aiml
+flask
+neo4j
+python-dotenv
